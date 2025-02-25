@@ -5,8 +5,9 @@ set -e
 CACHE_FILE=/var/log/zabbix/zabbix_speedtest.log
 LOCK_FILE=/run/lock/zabbix-speedtest.lock
 
-SPEEDTEST_CMD=speedtest-cli
-#SPEEDTEST_CMD=speedtest
+#SPEEDTEST_CMD=speedtest-cli
+SPEEDTEST_CMD=speedtest
+SERVER=14949
 
 run_speedtest() {
 	# Lock
@@ -26,7 +27,8 @@ run_speedtest() {
 	#Check if argument supplied to function, exec speedtest command and save output
 	if [ -z "$1" ]
 	then
-		output=$("$SPEEDTEST_CMD" --simple)
+		output=$("$SPEEDTEST_CMD" --server "$SERVER")
+		#output=$("$SPEEDTEST_CMD" --simple)
 	else
 		output=$("$SPEEDTEST_CMD" --server "$1" --simple)
 		CACHE_FILE+="_$1"
