@@ -87,15 +87,15 @@ then
 			;;
 		-u|--upload)
 			check_cache_exist "$CACHE_FILE"
-			awk '/Upload/ { print $2 }' "$CACHE_FILE"
+			awk '/Latency/ { print $3 }' "$CACHE_FILE"
 			;;
 		-d|--download)
 			check_cache_exist "$CACHE_FILE"
-			awk '/Download/ { print $2 }' "$CACHE_FILE"
+			awk '/Download/ { print $3 }' "$CACHE_FILE"
 			;;
 		-p|--ping)
 			check_cache_exist "$CACHE_FILE"
-			awk '/Ping/ { print $2 }' "$CACHE_FILE"
+			awk '/Ping/ { print $3 }' "$CACHE_FILE"
 			;;
 		-f|--force)
 			rm -rf "$LOCK_FILE"
@@ -125,15 +125,15 @@ then
 				;;
 			-u|--upload)
 				check_cache_exist "$CACHE_FILE"_"$3"
-				awk '/Upload/ { print $2 }' "$CACHE_FILE"_"$3"
+				awk '/Upload/ { print $3 }' "$CACHE_FILE"_"$3"
 				;;
 			-d|--download)
 				check_cache_exist "$CACHE_FILE"_"$3"
-				awk '/Download/ { print $2 }' "$CACHE_FILE"_"$3"
+				awk '/Download/ { print $3 }' "$CACHE_FILE"_"$3"
 				;;
 			-p|--ping)
 				check_cache_exist "$CACHE_FILE"_"$3"
-				awk '/Ping/ { print $2 }' "$CACHE_FILE"_"$3"
+				awk '/Latency/ { print $3 }' "$CACHE_FILE"_"$3"
 				;;
 		esac
 	fi
