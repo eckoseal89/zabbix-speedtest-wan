@@ -6,7 +6,7 @@ CACHE_FILE=/var/log/zabbix/zabbix_speedtest.log
 LOCK_FILE=/run/lock/zabbix-speedtest.lock
 
 #SPEEDTEST_CMD=speedtest-cli
-SPEEDTEST_CMD=speedtest
+SPEEDTEST_CMD=/bin/speedtest/speedtest
 SERVER=14949
 
 run_speedtest() {
