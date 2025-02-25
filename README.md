@@ -6,23 +6,10 @@ This repository contains a Zabbix template and a script to have a fixed speedtes
 
 Step 1: Install Speedtest itself
 
-In Debian or Ubuntu:
+In Ubuntu:
 
 ```bash
-sudo apt install speedtest-cli
-```
-
-In Centos:
-
-```bash
-yum -y install epel-release
-yum -y install speedtest-cli
-```
-
-Test if it works!
-
-```bash
-speedtest-cli --simple
+sudo snap install speedtest-cli
 ```
 
 Step 2: Create some folders for scripts and stuff and make writable:
