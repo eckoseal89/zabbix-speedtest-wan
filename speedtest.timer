@@ -1,8 +1,8 @@
 [Unit]
-Description=Run a speedtest every 10 minutes
+Description=Run a speedtest every 30 minutes
 
 [Timer]
-OnCalendar=*:0/10
+OnCalendar=*:0/30
 # RandomizedDelaySec=30
 
 [Install]
